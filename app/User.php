@@ -18,11 +18,11 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
+   public function microposts()
+    {
+        return $this->hasMany(Micropost::class);
+    }
+   
     protected $hidden = [
         'password', 'remember_token',
     ];
